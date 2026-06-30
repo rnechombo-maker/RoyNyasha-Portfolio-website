@@ -1,4 +1,8 @@
 import royPortrait from '@assets/roy (1).webp';
+import easystockImage from '@assets/EaseStock.webp';
+import easeInternImage from '@assets/EaseIntern.webp';
+import zimnestImage from '@assets/Zimnest.webp';
+import chimurengaChronicleImage from '@assets/ChimurengaChronicles.webp';
 import type { GalleryItem } from '@/types/site';
 
 const galleryImageModules = import.meta.glob('../assets/*.webp', {
@@ -6,8 +10,23 @@ const galleryImageModules = import.meta.glob('../assets/*.webp', {
   import: 'default'
 }) as Record<string, string>;
 
+const projectImageFilenames = new Set([
+  'EaseStock',
+  'EaseIntern',
+  'Zimnest',
+  'ChimurengaChronicles',
+  'Taskflow'
+]);
+
 export const assetRegistry = {
   royPortrait
+} as const;
+
+export const projectImages = {
+  'easystock-pamusika': easystockImage,
+  easeintern: easeInternImage,
+  zimnest: zimnestImage,
+  'chimurenga-chronicle': chimurengaChronicleImage
 } as const;
 
 function getCategoryFromFilename(filename: string): string {
@@ -65,6 +84,10 @@ function galleryDescription(category: string, title: string): string {
 }
 
 export const galleryItems: GalleryItem[] = Object.entries(galleryImageModules)
+  .filter(([path]) => {
+    const filename = path.split('/').pop()?.replace(/\.[^.]+$/, '') ?? '';
+    return !projectImageFilenames.has(filename);
+  })
   .sort(([pathA], [pathB]) => pathA.localeCompare(pathB, undefined, { numeric: true }))
   .map(([path, imageSrc]) => {
     const filename = path.split('/').pop()?.replace(/\.[^.]+$/, '') ?? 'Visual';

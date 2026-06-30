@@ -12,6 +12,7 @@ import { FaGithub, FaInstagram, FaLinkedin, FaMicrosoft, FaNodeJs, FaPython, FaR
 import { SiExpress, SiMongodb, SiTailwindcss, SiTwilio } from 'react-icons/si';
 import { GITHUB_PROFILE, INSTAGRAM_PHOTOGRAPHY, LINKEDIN_PROFILE } from './brand';
 export { galleryItems } from './assets';
+import { projectImages } from './assets';
 import type {
   Certification,
   ContributionDay,
@@ -124,6 +125,7 @@ export const projects: Project[] = [
     status: 'Currently Building',
     githubUrl: GITHUB_PROFILE,
     imageLabel: 'AI retail operations',
+    imageSrc: projectImages['easystock-pamusika'],
     highlight: true
   },
   {
@@ -135,6 +137,7 @@ export const projects: Project[] = [
     status: 'Prototype',
     githubUrl: GITHUB_PROFILE,
     imageLabel: 'Student placement workflow',
+    imageSrc: projectImages.easeintern,
     highlight: true
   },
   {
@@ -144,7 +147,8 @@ export const projects: Project[] = [
     technologies: ['JavaScript', 'Google Maps', 'REST APIs', 'MongoDB'],
     status: 'Product Concept',
     githubUrl: GITHUB_PROFILE,
-    imageLabel: 'Location-aware student housing'
+    imageLabel: 'Location-aware student housing',
+    imageSrc: projectImages.zimnest
   },
   {
     id: 'chimurenga-chronicle',
@@ -153,7 +157,8 @@ export const projects: Project[] = [
     technologies: ['Unity', 'C#', 'Game Design', 'Education'],
     status: 'Hackathon Winner',
     githubUrl: GITHUB_PROFILE,
-    imageLabel: 'Interactive history experience'
+    imageLabel: 'Interactive history experience',
+    imageSrc: projectImages['chimurenga-chronicle']
   }
 ];
 
