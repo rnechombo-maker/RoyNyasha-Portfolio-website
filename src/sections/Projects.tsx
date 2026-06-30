@@ -2,6 +2,7 @@ import { ExternalLink, Github } from 'lucide-react';
 import { ButtonLink } from '@components/ui/Buttons';
 import { SectionWrapper } from '@components/ui/SectionWrapper';
 import { projects } from '@constants/siteData';
+import { cn } from '@utils/cn';
 
 export default function Projects() {
   const featuredProjects = projects.filter((project) => project.highlight);
@@ -16,17 +17,19 @@ export default function Projects() {
       <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
         {featuredProjects.map((project) => (
           <article key={project.id} className="group glass-card overflow-hidden">
-            <div className="project-visual">
+            <div className={cn('project-visual', project.imageSrc && 'project-visual--image')}>
               {project.imageSrc ? (
                 <img
                   src={project.imageSrc}
                   alt={project.name}
                   loading="lazy"
                   decoding="async"
-                  className="absolute inset-0 h-full w-full max-w-full object-cover"
+                  className={cn(
+                    'absolute inset-0 h-full w-full max-w-full',
+                    project.imageFit === 'contain' ? 'object-contain p-6 sm:p-8' : 'object-cover'
+                  )}
                 />
               ) : null}
-              <span>{project.imageLabel}</span>
             </div>
             <div className="p-6">
               <div className="flex flex-wrap items-start justify-between gap-3">

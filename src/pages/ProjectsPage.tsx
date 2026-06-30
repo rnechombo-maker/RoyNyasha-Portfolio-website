@@ -4,6 +4,7 @@ import { pageVariants } from '@animations/variants';
 import { ButtonLink } from '@components/ui/Buttons';
 import { SectionWrapper } from '@components/ui/SectionWrapper';
 import { projects } from '@constants/siteData';
+import { cn } from '@utils/cn';
 
 export default function ProjectsPage() {
   return (
@@ -17,17 +18,19 @@ export default function ProjectsPage() {
         <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
           {projects.map((project) => (
             <article key={project.id} className="group glass-card overflow-hidden">
-              <div className="project-visual">
+              <div className={cn('project-visual', project.imageSrc && 'project-visual--image')}>
                 {project.imageSrc ? (
                   <img
                     src={project.imageSrc}
                     alt={project.name}
                     loading="lazy"
                     decoding="async"
-                    className="absolute inset-0 h-full w-full max-w-full object-cover"
+                    className={cn(
+                      'absolute inset-0 h-full w-full max-w-full',
+                      project.imageFit === 'contain' ? 'object-contain p-6 sm:p-8' : 'object-cover'
+                    )}
                   />
                 ) : null}
-                <span>{project.imageLabel}</span>
               </div>
               <div className="p-7">
                 <div className="flex flex-wrap items-center justify-between gap-3">

@@ -29,8 +29,8 @@ export interface Project {
   status: ProjectStatus;
   githubUrl: string;
   liveUrl?: string;
-  imageLabel: string;
   imageSrc?: string;
+  imageFit?: 'cover' | 'contain';
   highlight?: boolean;
 }
 

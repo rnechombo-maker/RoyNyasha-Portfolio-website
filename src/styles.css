@@ -248,6 +248,18 @@ textarea {
   background: linear-gradient(180deg, rgba(250, 247, 240, 0.04), rgba(250, 247, 240, 0.02));
 }
 
+.project-visual--image {
+  min-height: 240px;
+  aspect-ratio: 16 / 10;
+  padding: 0;
+  place-items: stretch;
+  background: rgba(250, 247, 240, 0.03);
+}
+
+.project-visual--image::before {
+  display: none;
+}
+
 .project-visual::before {
   content: "";
   position: absolute;
@@ -263,17 +275,6 @@ textarea {
 
 .group:hover .project-visual::before {
   transform: rotate(0deg) scale(1.04);
-}
-
-.project-visual span {
-  position: relative;
-  z-index: 1;
-  max-width: 15rem;
-  font-family: "Cormorant Garamond", Georgia, serif;
-  font-size: 2.15rem;
-  font-weight: 600;
-  line-height: 0.95;
-  color: var(--text-primary);
 }
 
 .contribution-grid {
@@ -311,6 +312,10 @@ textarea {
 
   .project-visual {
     min-height: 190px;
+  }
+
+  .project-visual--image {
+    min-height: 200px;
   }
 }
 

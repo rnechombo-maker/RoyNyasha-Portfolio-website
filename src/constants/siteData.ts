@@ -124,7 +124,6 @@ export const projects: Project[] = [
     technologies: ['Python', 'FastAPI', 'Meta APIs', 'Twilio', 'AI', 'Node.js', 'MongoDB'],
     status: 'Currently Building',
     githubUrl: GITHUB_PROFILE,
-    imageLabel: 'AI retail operations',
     imageSrc: projectImages['easystock-pamusika'],
     highlight: true
   },
@@ -136,7 +135,6 @@ export const projects: Project[] = [
     technologies: ['Node.js', 'Express', 'MongoDB', 'JavaScript'],
     status: 'Prototype',
     githubUrl: GITHUB_PROFILE,
-    imageLabel: 'Student placement workflow',
     imageSrc: projectImages.easeintern,
     highlight: true
   },
@@ -147,8 +145,8 @@ export const projects: Project[] = [
     technologies: ['JavaScript', 'Google Maps', 'REST APIs', 'MongoDB'],
     status: 'Product Concept',
     githubUrl: GITHUB_PROFILE,
-    imageLabel: 'Location-aware student housing',
-    imageSrc: projectImages.zimnest
+    imageSrc: projectImages.zimnest,
+    imageFit: 'contain'
   },
   {
     id: 'chimurenga-chronicle',
@@ -157,8 +155,8 @@ export const projects: Project[] = [
     technologies: ['Unity', 'C#', 'Game Design', 'Education'],
     status: 'Hackathon Winner',
     githubUrl: GITHUB_PROFILE,
-    imageLabel: 'Interactive history experience',
-    imageSrc: projectImages['chimurenga-chronicle']
+    imageSrc: projectImages['chimurenga-chronicle'],
+    imageFit: 'contain'
   }
 ];
 
