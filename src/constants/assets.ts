@@ -1,7 +1,7 @@
-import royPortrait from '@assets/roy (1).jpg';
+import royPortrait from '@assets/roy (1).webp';
 import type { GalleryItem } from '@/types/site';
 
-const galleryImageModules = import.meta.glob('../assets/*.{jpg,jpeg,png,webp}', {
+const galleryImageModules = import.meta.glob('../assets/*.webp', {
   eager: true,
   import: 'default'
 }) as Record<string, string>;
