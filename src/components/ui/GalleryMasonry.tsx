@@ -10,7 +10,7 @@ export default function GalleryMasonry({ items, className }: GalleryMasonryProps
   return (
     <div
       className={cn(
-        'columns-1 gap-4 min-[425px]:columns-2 md:columns-3 lg:columns-4',
+        'columns-1 gap-4 sm:columns-2 md:columns-3 lg:columns-4',
         className
       )}
     >
@@ -33,7 +33,7 @@ export default function GalleryMasonry({ items, className }: GalleryMasonryProps
               <div className="absolute inset-x-0 bottom-0 p-4 sm:p-5">
                 <p className="text-[0.65rem] uppercase tracking-[0.28em] text-highlightSoft">{item.category}</p>
                 <h3 className="mt-1.5 font-display text-xl font-semibold text-textPrimary sm:text-2xl">{item.title}</h3>
-                <p className="gallery-caption mt-2 text-sm leading-6 text-textPrimary/78">{item.description}</p>
+                <p className="gallery-caption mt-2 hidden text-sm leading-6 text-textPrimary/78 sm:block">{item.description}</p>
               </div>
             </div>
           ) : (

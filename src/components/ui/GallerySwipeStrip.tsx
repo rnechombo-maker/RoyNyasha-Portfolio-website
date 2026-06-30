@@ -1,16 +1,18 @@
 import type { GalleryItem } from '@/types/site';
+import { cn } from '@utils/cn';
 
 interface GallerySwipeStripProps {
   items: GalleryItem[];
+  className?: string;
 }
 
-export default function GallerySwipeStrip({ items }: GallerySwipeStripProps) {
+export default function GallerySwipeStrip({ items, className }: GallerySwipeStripProps) {
   return (
-    <div className="gallery-swipe-strip -mx-1 flex gap-3 overflow-x-auto px-1 pb-2 pt-1 sm:gap-4">
+    <div className={cn('gallery-swipe-strip -mx-1 flex gap-3 overflow-x-auto px-1 pb-2 pt-1 sm:gap-4', className)}>
       {items.map((item) => (
         <article
           key={`${item.title}-swipe`}
-          className="group w-[72vw] max-w-[220px] shrink-0 snap-start overflow-hidden rounded-[1.15rem] border border-accent/12 bg-bgSecondary/30 shadow-card sm:w-[200px]"
+          className="group w-[76vw] max-w-[260px] shrink-0 snap-start overflow-hidden rounded-[1.15rem] border border-accent/12 bg-bgSecondary/30 shadow-card sm:w-[220px]"
         >
           {item.imageSrc ? (
             <div className="relative aspect-[3/4] overflow-hidden">

@@ -1,8 +1,9 @@
 import { FaInstagram } from 'react-icons/fa';
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { ButtonAnchor, ButtonLink } from '@components/ui/Buttons';
 import GalleryAutoScroll from '@components/ui/GalleryAutoScroll';
 import GalleryMasonry from '@components/ui/GalleryMasonry';
+import GallerySwipeStrip from '@components/ui/GallerySwipeStrip';
 import SocialLinks from '@components/ui/SocialLinks';
 import { SectionWrapper } from '@components/ui/SectionWrapper';
 import { INSTAGRAM_PHOTOGRAPHY } from '@constants/brand';
@@ -11,10 +12,19 @@ import { cn } from '@utils/cn';
 
 export default function BeyondCode({ expanded = false }: { expanded?: boolean }) {
   const [selectedCategory, setSelectedCategory] = useState('All');
+  const [visibleCount, setVisibleCount] = useState(expanded ? 12 : Number.POSITIVE_INFINITY);
 
   const items = useMemo(() => {
     return selectedCategory === 'All' ? galleryItems : galleryItems.filter((item) => item.category === selectedCategory);
   }, [selectedCategory]);
+
+  useEffect(() => {
+    setVisibleCount(expanded ? 12 : Number.POSITIVE_INFINITY);
+  }, [expanded, selectedCategory]);
+
+  const visibleItems = useMemo(() => items.slice(0, visibleCount), [items, visibleCount]);
+  const previewItems = useMemo(() => items.slice(0, 12), [items]);
+  const hasMoreItems = expanded && visibleItems.length < items.length;
 
   return (
     <SectionWrapper
@@ -75,7 +85,28 @@ export default function BeyondCode({ expanded = false }: { expanded?: boolean })
         ))}
       </div>
 
-      {expanded ? <GalleryMasonry items={items} /> : <GalleryAutoScroll items={items} />}
+      {expanded ? (
+        <>
+          <GalleryMasonry items={visibleItems} />
+          {hasMoreItems ? (
+            <div className="mt-8 flex justify-center">
+              <button
+                type="button"
+                className="btn-secondary"
+                onClick={() => setVisibleCount((count) => count + 8)}
+                data-cursor="interactive"
+              >
+                Load More Visuals
+              </button>
+            </div>
+          ) : null}
+        </>
+      ) : (
+        <>
+          <GallerySwipeStrip items={previewItems} className="md:hidden" />
+          <GalleryAutoScroll items={items} className="hidden md:block" />
+        </>
+      )}
 
       {!expanded ? (
         <div className="mt-10">

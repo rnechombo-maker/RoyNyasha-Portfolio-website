@@ -5,6 +5,11 @@ export function useSectionInView<T extends HTMLElement>() {
   const [isInView, setIsInView] = useState(false);
 
   useEffect(() => {
+    if (!('IntersectionObserver' in window)) {
+      setIsInView(true);
+      return;
+    }
+
     const node = ref.current;
     if (!node) {
       return;
@@ -17,7 +22,7 @@ export function useSectionInView<T extends HTMLElement>() {
           observer.disconnect();
         }
       },
-      { threshold: 0.2 }
+      { rootMargin: '80px 0px', threshold: 0.05 }
     );
 
     observer.observe(node);

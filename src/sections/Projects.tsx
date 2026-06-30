@@ -15,15 +15,17 @@ export default function Projects() {
       description="These projects reflect how I like to build: practical systems, clear user value, and enough craft to make the experience feel considered."
     >
       <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
-        {featuredProjects.map((project) => (
+        {featuredProjects.map((project, index) => (
           <article key={project.id} className="group glass-card overflow-hidden">
             <div className={cn('project-visual', project.imageSrc && 'project-visual--image')}>
               {project.imageSrc ? (
                 <img
                   src={project.imageSrc}
                   alt={project.name}
-                  loading="lazy"
+                  loading={index === 0 ? 'eager' : 'lazy'}
                   decoding="async"
+                  fetchPriority={index === 0 ? 'high' : 'auto'}
+                  sizes="(min-width: 1024px) 50vw, calc(100vw - 2rem)"
                   className={cn(
                     'absolute inset-0 h-full w-full max-w-full',
                     project.imageFit === 'contain' ? 'object-contain p-6 sm:p-8' : 'object-cover'
@@ -31,14 +33,14 @@ export default function Projects() {
                 />
               ) : null}
             </div>
-            <div className="p-6">
+            <div className="p-5 sm:p-6">
               <div className="flex flex-wrap items-start justify-between gap-3">
-                <h3 className="font-display text-3xl font-semibold text-textPrimary">{project.name}</h3>
+                <h3 className="font-display text-2xl font-semibold text-textPrimary sm:text-3xl">{project.name}</h3>
                 <span className="rounded-full border border-accent/20 bg-accent/10 px-3 py-1 text-xs font-medium uppercase tracking-[0.18em] text-accent">
                   {project.status}
                 </span>
               </div>
-              <p className="mt-4 leading-7 text-textPrimary/72">{project.description}</p>
+              <p className="mt-4 text-sm leading-7 text-textPrimary/72 sm:text-base">{project.description}</p>
               <div className="mt-5 flex flex-wrap gap-2">
                 {project.technologies.map((tech) => (
                   <span key={tech} className="rounded-full border border-accent/12 bg-white/[0.03] px-3 py-1 text-sm text-textPrimary/75">
