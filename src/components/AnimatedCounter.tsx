@@ -1,5 +1,5 @@
-import { motion, useInView, useMotionValue, useSpring, useTransform } from 'framer-motion';
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
+import { usePrefersReducedMotion } from '@hooks/usePrefersReducedMotion';
 
 interface AnimatedCounterProps {
   value: number;
@@ -8,16 +8,62 @@ interface AnimatedCounterProps {
 
 export default function AnimatedCounter({ value, suffix = '' }: AnimatedCounterProps) {
   const ref = useRef<HTMLSpanElement>(null);
-  const inView = useInView(ref, { once: true, margin: '-80px' });
-  const motionValue = useMotionValue(0);
-  const spring = useSpring(motionValue, { duration: 1600, bounce: 0 });
-  const rounded = useTransform(spring, (latest) => `${Math.floor(latest)}${suffix}`);
+  const prefersReducedMotion = usePrefersReducedMotion();
+  const [hasStarted, setHasStarted] = useState(false);
+  const [displayValue, setDisplayValue] = useState(prefersReducedMotion ? value : 0);
 
   useEffect(() => {
-    if (inView) {
-      motionValue.set(value);
+    if (prefersReducedMotion) {
+      setDisplayValue(value);
+      setHasStarted(true);
+      return;
     }
-  }, [inView, motionValue, value]);
 
-  return <motion.span ref={ref}>{rounded}</motion.span>;
+    const node = ref.current;
+    if (!node || !('IntersectionObserver' in window)) {
+      setHasStarted(true);
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setHasStarted(true);
+          observer.disconnect();
+        }
+      },
+      { rootMargin: '120px 0px', threshold: 0.01 }
+    );
+
+    observer.observe(node);
+    return () => observer.disconnect();
+  }, [prefersReducedMotion, value]);
+
+  useEffect(() => {
+    if (!hasStarted || prefersReducedMotion) {
+      return;
+    }
+
+    let frameId = 0;
+    const duration = 1400;
+    const startTime = performance.now();
+
+    const animate = (time: number) => {
+      const progress = Math.min((time - startTime) / duration, 1);
+      const easedProgress = 1 - Math.pow(1 - progress, 3);
+
+      setDisplayValue(Math.floor(easedProgress * value));
+
+      if (progress < 1) {
+        frameId = window.requestAnimationFrame(animate);
+      } else {
+        setDisplayValue(value);
+      }
+    };
+
+    frameId = window.requestAnimationFrame(animate);
+    return () => window.cancelAnimationFrame(frameId);
+  }, [hasStarted, prefersReducedMotion, value]);
+
+  return <span ref={ref}>{displayValue}{suffix}</span>;
 }

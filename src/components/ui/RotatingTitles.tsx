@@ -32,7 +32,7 @@ export default function RotatingTitles() {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -18 }}
           transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
-          className="absolute left-0 top-0"
+          className="absolute inset-x-0 top-0 text-center lg:left-0 lg:right-auto lg:text-left"
         >
           {HERO_TITLES[index]}
         </motion.span>

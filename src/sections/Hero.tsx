@@ -24,11 +24,11 @@ export default function Hero() {
         </motion.p>
         <motion.h1
           variants={childVariants}
-          className="mt-6 font-display text-hero font-semibold leading-[0.88] tracking-tight text-textPrimary"
+          className="mt-6 text-center font-display text-hero font-semibold leading-[0.88] tracking-tight text-textPrimary lg:text-left"
         >
           ROY NYASHA <span className="gradient-text">NECHOMBO</span>
         </motion.h1>
-        <motion.div variants={childVariants} className="mt-6 text-body-lg font-medium tracking-[0.04em] text-textPrimary/82 sm:mt-8 sm:text-xl lg:text-2xl">
+        <motion.div variants={childVariants} className="mt-6 text-center text-body-lg font-medium tracking-[0.04em] text-textPrimary/82 sm:mt-8 sm:text-xl lg:text-left lg:text-2xl">
           <RotatingTitles />
         </motion.div>
         <motion.p variants={childVariants} className="text-body-lg mt-6 max-w-2xl leading-8 text-textPrimary/72 sm:mt-8">

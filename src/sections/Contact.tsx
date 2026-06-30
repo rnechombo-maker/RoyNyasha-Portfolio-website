@@ -1,7 +1,9 @@
 import { Loader2, Mail, MapPin, Phone, Send } from 'lucide-react';
 import { FormEvent, useState } from 'react';
+import { FaWhatsapp } from 'react-icons/fa';
 import SocialLinks from '@components/ui/SocialLinks';
 import { SectionWrapper } from '@components/ui/SectionWrapper';
+import { WHATSAPP_LINK, WHATSAPP_NUMBER } from '@constants/brand';
 import { sendContactEmail } from '@utils/email';
 
 export default function Contact() {
@@ -48,6 +50,9 @@ export default function Contact() {
             <a className="flex items-center gap-3 transition hover:text-textPrimary" href="tel:+263788477915" data-cursor="interactive">
               <Phone className="text-highlight" size={20} aria-hidden /> +263 788 477 915
             </a>
+            <a className="flex items-center gap-3 transition hover:text-textPrimary" href={WHATSAPP_LINK} target="_blank" rel="noreferrer" data-cursor="interactive">
+              <FaWhatsapp className="text-highlight" size={20} aria-hidden /> WhatsApp {WHATSAPP_NUMBER}
+            </a>
           </div>
           <div className="mt-8">
             <SocialLinks />
@@ -77,6 +82,10 @@ export default function Contact() {
             <a className="btn-secondary" href="mailto:rnechombo@gmail.com" data-cursor="interactive">
               <Mail size={18} />
               Email Directly
+            </a>
+            <a className="btn-secondary" href={WHATSAPP_LINK} target="_blank" rel="noreferrer" data-cursor="interactive">
+              <FaWhatsapp size={18} />
+              WhatsApp
             </a>
           </div>
           {status === 'sent' ? (

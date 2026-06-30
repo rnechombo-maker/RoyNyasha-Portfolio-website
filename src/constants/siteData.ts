@@ -8,9 +8,9 @@ import {
   ShieldCheck,
   Wrench
 } from 'lucide-react';
-import { FaGithub, FaInstagram, FaLinkedin, FaMicrosoft, FaNodeJs, FaPython, FaReact } from 'react-icons/fa';
+import { FaGithub, FaInstagram, FaLinkedin, FaMicrosoft, FaNodeJs, FaPython, FaReact, FaWhatsapp } from 'react-icons/fa';
 import { SiExpress, SiMongodb, SiTailwindcss, SiTwilio } from 'react-icons/si';
-import { GITHUB_PROFILE, INSTAGRAM_PHOTOGRAPHY, LINKEDIN_PROFILE } from './brand';
+import { GITHUB_PROFILE, INSTAGRAM_PHOTOGRAPHY, LINKEDIN_PROFILE, WHATSAPP_LINK } from './brand';
 export { galleryItems } from './assets';
 import { projectImages } from './assets';
 import type {
@@ -41,6 +41,7 @@ export const socialLinks: SocialLink[] = [
   { label: 'GitHub', href: GITHUB_PROFILE, icon: FaGithub },
   { label: 'LinkedIn', href: LINKEDIN_PROFILE, icon: FaLinkedin },
   { label: 'Instagram', href: INSTAGRAM_PHOTOGRAPHY, icon: FaInstagram },
+  { label: 'WhatsApp', href: WHATSAPP_LINK, icon: FaWhatsapp },
   { label: 'Email', href: 'mailto:rnechombo@gmail.com', icon: FaMicrosoft }
 ];
 

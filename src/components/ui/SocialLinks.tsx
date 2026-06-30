@@ -5,6 +5,7 @@ const ariaLabels: Record<string, string> = {
   GitHub: 'View GitHub profile',
   LinkedIn: 'Connect on LinkedIn',
   Instagram: 'Follow Street Art Gallery on Instagram',
+  WhatsApp: 'Message Roy Nyasha Nechombo on WhatsApp',
   Email: 'Send email to Roy Nyasha Nechombo'
 };
 
