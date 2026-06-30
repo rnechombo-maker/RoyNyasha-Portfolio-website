@@ -1,0 +1,43 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="#1b1b1b"/>
+  <circle cx="240" cy="140" r="240" fill="url(#glowOne)"/>
+  <circle cx="1040" cy="120" r="220" fill="url(#glowTwo)"/>
+  <circle cx="760" cy="560" r="280" fill="url(#glowThree)"/>
+  <rect x="64" y="56" width="1072" height="518" rx="36" fill="rgba(250,247,240,0.02)" stroke="rgba(214,210,196,0.16)"/>
+  <text x="112" y="150" fill="#d6d2c4" font-family="DM Sans, Arial, sans-serif" font-size="24" font-weight="600" letter-spacing="7.2">
+    SOFTWARE ENGINEER • COMPUTER SCIENTIST • DIGITAL CREATIVE
+  </text>
+  <text x="112" y="286" fill="#faf7f0" font-family="Cormorant Garamond, Georgia, serif" font-size="88" font-weight="600">
+    ROY NYASHA
+  </text>
+  <text x="112" y="376" fill="#faf7f0" font-family="Cormorant Garamond, Georgia, serif" font-size="88" font-weight="600">
+    NECHOMBO
+  </text>
+  <text x="112" y="458" fill="#d6d2c4" font-family="DM Sans, Arial, sans-serif" font-size="28" font-weight="500">
+    Building refined software, AI systems, and digital experiences from Harare, Zimbabwe.
+  </text>
+  <rect x="844" y="356" width="228" height="138" rx="28" fill="rgba(250,247,240,0.04)" stroke="rgba(214,210,196,0.18)"/>
+  <text x="882" y="418" fill="#8a8a8a" font-family="DM Sans, Arial, sans-serif" font-size="16" font-weight="700" letter-spacing="4">
+    AVAILABLE FOR
+  </text>
+  <text x="882" y="454" fill="#faf7f0" font-family="Cormorant Garamond, Georgia, serif" font-size="28" font-weight="600">
+    Software
+  </text>
+  <text x="882" y="488" fill="#faf7f0" font-family="Cormorant Garamond, Georgia, serif" font-size="28" font-weight="600">
+    Creative Work
+  </text>
+  <defs>
+    <radialGradient id="glowOne" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(240 140) rotate(90) scale(240)">
+      <stop stop-color="#d6d2c4" stop-opacity="0.12"/>
+      <stop offset="1" stop-color="#d6d2c4" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glowTwo" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1040 120) rotate(90) scale(220)">
+      <stop stop-color="#faf7f0" stop-opacity="0.06"/>
+      <stop offset="1" stop-color="#faf7f0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glowThree" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(760 560) rotate(90) scale(280)">
+      <stop stop-color="#4a4a4a" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#4a4a4a" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+</svg>

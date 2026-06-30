@@ -1,0 +1,43 @@
+Roy Nyasha Nechombo
+Software Engineer | IT Support Specialist | Photographer | Digital Creative
+Harare, Zimbabwe
+Email: rnechombo@gmail.com
+Phone: +263 788 477 915
+
+Profile
+Computer Science student at Harare Institute of Technology with practical experience in software engineering, IT support, photography, graphic design, and digital content creation. Builds useful software for real-world workflows while bringing a strong creative eye to product presentation and digital media.
+
+Education
+Harare Institute of Technology
+Bachelor of Technology Honours in Computer Science
+Current GPA: 8.26 / 10
+
+Marondera High School
+A Levels
+
+St Faith's High School
+O Levels
+
+Experience
+Tech Support & Digital Assistant
+Alice Machena Medical Centre
+- Installed and maintained hardware and software.
+- Provided hands-on IT support and troubleshooting.
+- Created promotional graphics and digital content.
+- Improved operational efficiency through reliable support and clear communication.
+
+Projects
+EasyStock Pamusika
+AI-powered WhatsApp ERP system for informal retailers managing inventory, sales, customer credit, and expenses through natural conversations.
+
+EaseIntern
+Internship management platform connecting university students with employers.
+
+ZimNest
+Student accommodation platform integrating maps and backend APIs.
+
+Chimurenga Chronicle
+Hackathon-winning educational Unity game teaching Zimbabwean history.
+
+Skills
+Python, Java, C#, JavaScript, React, TailwindCSS, Node.js, Express.js, MongoDB, REST APIs, FastAPI, Meta APIs, Twilio, Git, GitHub, Microsoft 365, Windows Administration, Network Troubleshooting, Photography, Adobe Creative Suite, DaVinci Resolve, Graphic Design.
