@@ -20,7 +20,7 @@ export default function Hero() {
         className="order-2 lg:order-1"
       >
         <motion.p variants={childVariants} className="eyebrow">
-          Software engineer with a cinematic design sensibility
+          Coputer Engineer engineer with a cinematic design sensibility
         </motion.p>
         <motion.h1
           variants={childVariants}
